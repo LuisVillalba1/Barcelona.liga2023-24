@@ -1,7 +1,7 @@
 # FC Barcelona liga 2023-2024
 
 ![Barcelona_logo](https://a57.foxsports.com/statics.foxsports.com/www.foxsports.com/content/uploads/2023/03/1408/814/barcelona1.jpg?ve=1&tl=1)
-Esta api esta enfocada en el futbol club barcelona en la liga actual(2023-2024),el cual se encuentra actualizada hasta el dia de la fecha (2023-17-10).
+Esta api esta enfocada en el futbol club barcelona en la liga actual(2023-2024).
 
 Para llevarla a cabo utilize la siguientes tecnologias :
 
@@ -13,7 +13,7 @@ Para llevarla a cabo utilize la siguientes tecnologias :
 - [TypeORM](https://typeorm.io/)
 - [Dotenv](https://www.npmjs.com/package/dotenv) si utilizas algun medio para desplazar la aplicacion web
 
-Para poder utilizarla es importante tener instalado node.js y mysql.
+Para poder utilizarla es importante tener instalado node.js, mysql asi como todas las dependencias.
 
 En el se podran visualizar distintos datos como:
 -Partidos jugados
@@ -54,6 +54,8 @@ En el se podran visualizar distintos datos como:
 
 Para comenzar lo primero que deben de hacer es descargar el repositorior, para ello van al respositorio,en la seccion verde < code > y descargan el zip.
 
+IMPORTANTE: para poder correr el programa primero deben de modificar los datos del archivo .env con respecto a su base de datos.
+
 #### Correr programa Localmente
 
 Posterior a la descarga deberan abrir la carpeta en un editor de codigo y correr en la terminar el siguiente comando
@@ -62,7 +64,7 @@ Posterior a la descarga deberan abrir la carpeta en un editor de codigo y correr
 
 ------------
 
-Finalmente abre tu navegador y escribe en tu buscador `http://localhost:3000/api/partidos`
+Finalmente abre tu navegador y escribe en tu buscador `http://localhost:3000/api/`
 
 ### visualizar-datos
 
@@ -150,7 +152,7 @@ Para insertar un nuevo rival se debera de realizar una solicitud **Post** a la s
 
 `http://localhost:3000/api/rivales`
 
-Si bien todos los rivales de la liga actual se encuentran almacenados, en caso de eliminar uno por equivocacion, podran cargarlos de nuevo de la siguiente manera :
+Podran almacenar tanto el nombre del club, como su estadio.
 
 `
 "Nombre" : "Real betis","Estadio" :  "Estadio Benito Villamarín"
@@ -188,7 +190,7 @@ Es importante resaltar de que para ingresar un nuevo Gol debe de existir previam
 
 En caso de que el gol fuera dentro del primer tiempo, en tiempo extra, insertar 45:00, y si el gol es despues de los 90 ingresar el minuto exacto, por ejemplo 94:00.
 
-Por ultimo si el gol es en propia puerta por parte del rival, JugadorID debera de recibir como valor el numero 23.
+Por ultimo si el gol es en propia puerta por parte del rival, se debera de crear un nuevo jugador en la base de datos que tenga como nombre gol en propia meta, con el valor de la propiedad Enclub en false.
 
 #### insertar-tarjeta
 
