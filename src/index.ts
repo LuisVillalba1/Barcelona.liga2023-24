@@ -4,6 +4,7 @@ import { dataSource } from "./db/db";
 
 const main = async()=>{
     try{
+        //nos conectamos a la base de datos
         await dataSource.initialize();
         console.log("connection a la base de datos completada")
         const PUERTO = process.env.PORT ?? 3000;

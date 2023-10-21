@@ -45,7 +45,7 @@ export const getPartidos =async (req : Request,res : Response)=> {
         queryOrdenarPartidos(req,res)
     }
     else{
-        await getDataRepository(res,Partidos,"partido",["Goles","Rival"]);
+        await getDataRepository(res,Partidos,"partido",["Goles","Rival","Tarjetas"]);
     }
 }
 

@@ -23,7 +23,7 @@ export const isBoolean = (boolean : any):boolean=>{
 
 export const isMinuto = (string: any): boolean => {
     if (isString(string)) {
-        // Nuevo formato para verificar los minutos ingresados
+        //Formato para verificar los minutos ingresados
         const regex = /^\d{2,3}:\d{2}$/;
 
         return regex.test(string);
@@ -33,13 +33,14 @@ export const isMinuto = (string: any): boolean => {
 
 export const isFecha = (string : any):boolean=>{
     if(isString(string)){
+        //formato para verificar la fecha
         const regex = /^\d{4}-\d{2}-\d{2}$/;
         return regex.test(string)
     }
     throw new Error("Formato de fecha no valida")
 }
 
-
+//mostramos la informacion del repositorio en concreto, junto con sus relations, en caso de tener
 export const getDataRepository =async (res : Response, entityRepository : Entity,entity : string,relations : Array<string | never>):Promise<Entity[] | object> => {
     try{
         const repository = dataSource.getRepository(entityRepository)
@@ -76,6 +77,7 @@ export const getDataRepository =async (res : Response, entityRepository : Entity
     }
 }
 
+//obtenemos un objeto en concreto del respositorio, junto con sus relaciones en caso de tenerlas
 export const getDataIDRepository = async (req : Request,res : Response, entityRepository : Entity,primaryColumn : string,entity : string,relations : Array <string | never>):Promise<Entity[]| Entity | object> => {
     try{
         const respository = dataSource.getRepository(entityRepository)
@@ -118,6 +120,7 @@ export const getDataIDRepository = async (req : Request,res : Response, entityRe
     }
 }
 
+//eliminamos un objeto del respositorio correspondiente
 export const deleteDataRepository =async (req : Request, res : Response,entityRepository : Entity,primaryColumn : string,entity : string):Promise<object> => {
     try{
         const respository = dataSource.getRepository(entityRepository);

@@ -6,6 +6,7 @@ import { Tarjetas } from "../entity/tarjetas";
 import { Rivales } from "../entity/rivales";
 import {dbHost,dbName,dbPassword,dbPort,dbUser} from "./config"
 
+//configuramos las opciones para conectarnos a nuestra base de datos
 const dataSourceOptions : DataSourceOptions ={
     type : "mysql",
     host : dbHost,
@@ -18,4 +19,5 @@ const dataSourceOptions : DataSourceOptions ={
     logging: false
 }
 
+//creamos la base de datos
 export const dataSource = new DataSource(dataSourceOptions)
